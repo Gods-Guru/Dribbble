@@ -1,0 +1,367 @@
+*{
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  background-color: rgb(248, 238, 227);
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 2px solid #d4008d; */
+}body{
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+button{
+  cursor: pointer;
+}
+.nav{
+  display: flex;
+  height: 100px;
+  position: relative;
+  margin-top: 1rem;
+}
+.logo{ /*I realised that this is the best place to tackle the problem because it controls the entire div of the icon. 
+        The problem of the positioning of the logo*/
+  position: relative;
+  top: -3%;
+}
+.nav__logo{
+  position: relative;
+  right: 0%;
+  padding: 0.8rem;
+  font-size: large;
+  color: black;
+}
+.nav__logo1{
+  display: flex;
+  width: 100px;
+  height: 60px;
+  margin: 1rem;
+  position: relative;
+  /* padding-right: 1rem; */
+}
+.buttons{
+  position: relative;
+  left: 28%; /*This is recommended*/
+}
+.nav__searchwrap{
+  background-color: white;
+  border-radius: 2rem;
+  width: 255px;
+  height: 40px;
+  border: 0;
+}
+.nav__search{
+  font-size: large;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 0px 0px 0px;
+  outline: none; /*This is what Ivy told me and I used to stop the inner border that appeared anytime I clicked the search field.*/
+}
+.nav__searchwrap:hover{
+  border: 2px solid #d090e4;
+}
+/*Note: the reason it didn't work before was because there was a space before the column before the hover*/
+.nav__login{
+  width: 110px;
+  border-radius: 2rem;
+  height: 30px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border: none;
+}
+.nav__login:hover, .nav__signup:hover{
+  border: 1px solid #0110e0;
+}
+.nav__signup{
+  width: 110px;
+  border-radius: 2rem;
+  height: 30px;
+  background-color: rgb(10, 12, 47);
+  color: white;
+  border: none;
+}
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 45px;
+  border-radius: 3rem;
+  position: relative;
+  font-weight: bold;
+  left: 36.5%;
+  animation: show 15s linear 0s infinite normal /*fill-mode*/;
+}
+@keyframes show {
+  0%{background-color: rgb(243, 92, 230);}
+  5%{background-color: rgb(218, 179, 214);}
+  10%{background-color: rgb(207, 129, 243);}
+  15%{background-color: rgb(192, 129, 243);}
+  20%{background-color: rgb(178, 129, 243);}
+  25%{background-color: rgb(146, 129, 243);}
+  30%{background-color: rgb(129, 156, 243);}
+  35%{background-color: rgb(129, 216, 243);}
+  40%{background-color: rgb(129, 239, 243);}
+  45%{background-color: rgb(129, 243, 180);}
+  50%{background-color: rgb(78, 243, 78);}
+  55%{background-color: rgb(78, 243, 100);}
+  60%{background-color: rgb(180, 243, 78);}
+  65%{background-color: rgb(199, 243, 78);}
+  70%{background-color: rgb(243, 240, 78);}
+  75%{background-color: rgb(243, 205, 78);}
+  80%{background-color: rgb(245, 198, 45);}
+  85%{background-color: rgb(243, 130, 78);}
+  90%{background-color: rgb(243, 111, 78);}
+  95%{background-color: rgb(243, 84, 78);}
+  100%{background-color: rgb(240, 56, 56);}
+}
+
+.head{}
+.text{
+  display: flex;
+  font-size: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 900px;
+  height: 100px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  left: 17%;
+  /* I'm still trying to make the text start from the middle the way it did in the original website.*/
+  /* Update: I used text-align: center; and it worked! */
+}
+.body{
+  font-size: 1.3rem;
+  font-family: serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start{
+  width: 130px;
+  height: 50px;
+  border-radius: 2rem;
+  background-color: rgb(10, 12, 47);
+  color: white;
+  position: relative;
+  left: 45%;
+  border: 0;
+}
+.header{
+  background-color: white;
+}
+/* Animations */
+/* 1. name:
+The name of the @keyframes animation you want to apply.
+Example: slideIn
+2. duration:
+The length of time the animation takes to complete one cycle.
+Example: 2s (2 seconds)
+3. timing-function:
+Controls the speed curve of the animation.
+Common values:
+linear: The animation progresses at a constant speed.
+ease: Starts slowly, speeds up in the middle, then slows down again.
+ease-in: Starts slowly, then speeds up.
+ease-out: Starts quickly, then slows down.
+ease-in-out: Starts and ends slowly, but speeds up in the middle.
+cubic-bezier(n,n,n,n): Custom speed curve using cubic-bezier.
+4. delay:
+Time to wait before starting the animation.
+Example: 1s (1 second)
+5. iteration-count:
+Number of times the animation should play.
+Common values:
+1: Plays once.
+infinite: Loops the animation forever.
+A specific number like 3 to repeat three times.
+6. direction:
+Defines whether the animation should play in reverse on alternate cycles.
+Common values:
+normal: Plays the animation in the forward direction.
+reverse: Plays the animation in reverse direction.
+alternate: Alternates between playing the animation forward and backward.
+alternate-reverse: Starts playing backward and then alternates.
+7. fill-mode:
+Defines the state of the element when the animation is not playing (before it starts, after it ends).
+Common values:
+none: Default; the element does not retain any styles from the animation.
+forwards: The element retains the styles from the last keyframe after the animation ends.
+backwards: The element applies the styles from the first keyframe before the animation starts.
+both: The element retains the styles from both the first and last keyframes.
+ */
+.footer{
+  background-color: rgb(126, 255, 233);
+  width: 100%;
+  height: 10rem;
+  padding: 0;
+  margin-top: 2vh;
+  box-sizing: border-box;
+} 
+ /* .scrolling{
+  display: flex;
+  padding: 0.5rem;
+  overflow-x: auto;
+  animation: slide infinite linear 0 infinite normal none;
+ }
+@keyframes slide {
+  
+}
+
+.scroll{
+  position: relative;
+  padding: 0.5rem;
+}
+.scroll__img{
+  border-radius: 2.5rem;
+  width: 250px;
+  height: 310px;
+  position: relative;
+}
+.scroll__texts{
+  color: rgb(255, 255, 255);
+}
+.scroll__name{
+  font-weight: bolder;
+  font-size: 20px;
+  top: 70%;
+  left: 5%;
+  position: absolute;
+  background-color: transparent;
+}
+.scroll__job{
+  font-weight: bolder;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  background-color: transparent;
+}
+.scroll__buttons{
+  display: flex;
+  position: absolute;
+  top: 87%;
+  left: 5%;
+  background-color: transparent;
+}
+.scroll__btn1{
+  margin: 0.3rem;
+  border-radius: 2rem;
+  color: white;
+  background-color: transparent;
+}
+.scroll__btn2{
+  margin: 0.3rem;
+  border-radius: 2rem;
+  color: white;
+  background-color: transparent;
+}
+.scroll__btn3{
+  margin: 0.3rem;
+  border-radius: 2rem;
+  color: white;
+  background-color: transparent;
+} */
+.Card-Container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 97vw;
+  height: 60vh;
+  gap: 2rem;
+  overflow-x: hidden;
+  overflow-x: scroll;
+  padding-left: 1%;
+}
+/* @media (max-width: 919px) {
+  .Card-Container {
+      -webkit-transform:translateY(15%) scale(0.98);
+      -ms-transform: translateY(15%) scale(0.98);
+      transform: translateY(15%) scale(0.98)
+  }
+} */
+.Card-Container::-webkit-scrollbar{
+  display: none;
+  flex-direction: column;
+}
+.card{
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
+  background-color: transparent;
+  min-height: 340px;
+  min-width: 273px;
+}
+.slide{
+  display: flex;
+  width: max-content; 
+  min-width: 25%;
+}
+.image{
+  height: 100%;
+  border-radius: 2rem;
+  width: 100%; /* Each slide takes full width */
+}
+.tags{
+  width: 100%;
+  height: 40%;
+  border-radius: 2rem;
+  background-color: transparent;
+  background-image: linear-gradient(to top,rgb(0, 0, 0, 0.6),rgb(0, 0, 0, 0)); /*This is for that 'shady' looking effect.*/
+  position: absolute;
+  padding: 10px;
+  bottom: 0%; /*Important*/
+}
+.name{
+  color: white;
+  font-weight: 600;
+  font-size: 1.2vw;
+  background-color: transparent;
+  position: relative;
+  top: 25%;
+}
+.role{
+  color: white;
+  font-weight: 600;
+  font-size: 1.2vw;
+  background-color: transparent;
+  position: relative;
+  top: 30%;
+}
+.role-tags{
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  flex-direction: row;
+  gap: 10%;
+  position: relative;
+  top: 40%;
+}
+.tag{
+  display: flex;
+  color: white;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  font-size: 1vw;
+  height: 4.4vh;
+  border: 1px solid rgb(255, 255, 255, 0.3);
+}
+.video{
+  display: flex;
+  height: 53.8vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  overflow: hidden;
+  min-height: 340px;
+  min-width: 273px;
+}
